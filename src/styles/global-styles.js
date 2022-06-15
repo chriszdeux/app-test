@@ -27,6 +27,9 @@ export  const Text = styled.h3`
 export const Paragrahp = styled.p`
   font-size: 1.6rem;
 ` 
+export const SmallText = styled.p`
+  font-size: 1.3rem;
+` 
 
 export const Button = styled.button`
   width: 25rem;

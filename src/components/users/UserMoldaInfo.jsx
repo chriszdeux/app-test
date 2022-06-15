@@ -4,7 +4,10 @@ import { Card, CardImage, Image, ModalContent } from '../../styles/users-style'
 import { UserPosts } from './UserPosts'
 
 export const UserMoldaInfo = ({ user }) => {
-  const { avatar, first_name, last_name, email, id } = user
+  const { avatar, first_name, last_name, email, id, posts } = user
+
+  // useEffect(() )
+  // debugger
   return (
     <ModalContent>
     <Card>
@@ -14,7 +17,7 @@ export const UserMoldaInfo = ({ user }) => {
       <SubTitle>{ first_name } { last_name }</SubTitle>
       <Paragrahp>{ email }</Paragrahp>
     </Card>
-    <UserPosts id={ id }/>
+    <UserPosts posts={ posts }/>
     </ModalContent>
   )
 }

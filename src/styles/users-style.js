@@ -66,7 +66,7 @@ export const ModalContent = styled.div`
   overflow-y: scroll;
 `
 export const PostContainer = styled.div`
-  width: 80%;
+  /* width: 80%; */
   padding: 1rem;
   display: grid;
   gap: 1rem;
@@ -82,6 +82,9 @@ export const Post = styled.div`
 
 export const PostBody = styled.p`
   font-size: 1.4rem;
+  word-spacing: 1rem;
+  letter-spacing: 1px
+
 `
 
 export const ButtonsContainer = styled.div`
@@ -97,4 +100,20 @@ export const ButtonsContainer = styled.div`
     color: white;
     border: none;
   }
+`
+
+export const CommentBox = styled.div`
+  /* width: 90%; */
+  min-height: 10rem;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+
+`
+
+export const Comment = styled.div` 
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 2rem
 `

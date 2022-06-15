@@ -1,5 +1,4 @@
 import React from 'react'
-import { useFetchPosts } from '../../hooks/dataFetch/useFetchPosts'
 import { Modal, ModalLayout } from '../../styles/users-style'
 import { UserCard } from './UserCard'
 import { UserMoldaInfo } from './UserMoldaInfo'

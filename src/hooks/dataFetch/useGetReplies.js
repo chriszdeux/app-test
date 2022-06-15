@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react"
+import { fetchComments } from "../../data/fetchComments"
 import { fetchPosts } from "../../data/fetchPosts"
 
-export const useGetPosts = ( id ) => {
+export const useGetComments = (  ) => {
   const [data, setData] = useState({
     loading: true,
-    posts: [],
+    comments: [],
     error: {
       isError: false,
       err: '',
@@ -22,12 +23,12 @@ export const useGetPosts = ( id ) => {
   }, [ ])
 
   useEffect(() => {
-    fetchPosts(id)
+    fetchComments()
       .then(item => {
         if(!isMounted.current) {
           setData({
             ...data,
-            posts: item,
+            comments: item,
             loading: false
           })
         } else {
@@ -52,7 +53,7 @@ export const useGetPosts = ( id ) => {
         })
         console.error(new Error(`Connection Error`))
       })
-  }, [ id ])
+  }, [  ])
 
   return data
 }

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
-import { fetchUsers } from "../../data/fetchUsers"
+import { fetchPosts } from "../../data/fetchPosts"
 
-export const useGetUsers = (  ) => {
+export const useGetPosts = (  ) => {
   const [data, setData] = useState({
     loading: true,
-    users: [],
+    posts: [],
     error: {
       isError: false,
       err: '',
@@ -22,13 +22,13 @@ export const useGetUsers = (  ) => {
   }, [ ])
 
   useEffect(() => {
-    fetchUsers()
+    fetchPosts()
       .then(item => {
+        // debugger
         if(!isMounted.current) {
-          // debugger
           setData({
             ...data,
-            users: item,
+            posts: item,
             loading: false
           })
         } else {
