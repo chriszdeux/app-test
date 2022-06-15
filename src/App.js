@@ -1,15 +1,11 @@
-import { SubTitle, Title } from "./styles/global-styles";
-import { Header } from "./styles/header-style";
+import { MainRouter } from "./route/MainRouter";
 
 
 
 function App() {
   return (
     <div className="App">
-      <Header>
-        <Title>App-test</Title>
-        <SubTitle>Menu</SubTitle>
-      </Header>
+      <MainRouter />
     </div>
   );
 }
