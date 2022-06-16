@@ -19,10 +19,12 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.h2`
   font-size: 2.5rem;
+  color: #368bf9;
 `
 export  const Text = styled.h3`
-  font-size: 1.5rem;
-  color: gray;
+  font-size: 1.6rem;
+  color: #2f6bb5;
+  margin-bottom: 1rem;
 `
 export const Paragrahp = styled.p`
   font-size: 1.6rem;
@@ -44,4 +46,7 @@ export const DeleteButton = styled(Button)`
 `
 export const RegularButton = styled(Button)`
   background-color: lightblue;
+`
+export const AcceptButton = styled(Button)`
+  background-color: #14e58e;
 `

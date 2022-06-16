@@ -5,6 +5,7 @@ import { useGetPosts } from "./hooks/dataFetch/useGetPosts";
 import { useGetComments } from "./hooks/dataFetch/useGetReplies";
 import { useGetUsers } from "./hooks/dataFetch/useGetUsers";
 import { MainRouter } from "./route/MainRouter";
+import 'animate.css';
 
 
 
@@ -21,7 +22,7 @@ useEffect(() => {
 
 useEffect(() => {
     UsersData.posts.length === 0 && dispatch(storePosts(Posts.posts))
-  }, [ Posts.posts.length ])
+  }, [ Posts.posts.length, Posts.posts ])
   
 useEffect(() => {
     UsersData.comments.length === 0 && dispatch(storeComments(Comments.comments))
@@ -31,7 +32,7 @@ useEffect(() => {
   if( UsersData.posts.length > 0 ) {
     dispatch(mergeData())
   }
-}, [ Posts ])
+}, [ Posts.posts ])
   return (
     <div className="App">
       <MainRouter />

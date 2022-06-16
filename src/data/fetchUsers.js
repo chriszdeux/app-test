@@ -12,7 +12,7 @@ export const fetchUsers = async (  ) => {
   const addingDelay = mergePages.map((item, index) => {
     return {
       ...item,
-      delay: `${(index + 1) * .5}s`,
+      delay: index + 1,
     }
   })
 

@@ -1,12 +1,22 @@
 import React from 'react'
-import { Button, DeleteButton, RegularButton } from '../../styles/global-styles'
+import { AcceptButton, Button, DeleteButton, RegularButton } from '../../styles/global-styles'
 import { ButtonsContainer } from '../../styles/users-style'
-
-export const EditDeletePost = () => {
+import { animations } from '../../constant/animations'
+export const EditDeletePost = ({ values }) => {
+  const { isOpen, handleIsOpen, handleEditPost, handleDeletePost } = values
+  const { fade_top }  = animations
   return (
-    <ButtonsContainer>
-      <DeleteButton>Delete</DeleteButton>
-      <RegularButton>Edit</RegularButton>
+    <ButtonsContainer className={ fade_top }>
+      {
+        !isOpen 
+         ?  <DeleteButton onClick={ handleDeletePost }>Delete</DeleteButton>
+         :  <DeleteButton onClick={ handleIsOpen }>Cancel</DeleteButton>
+      }
+      {
+        isOpen
+        ? <AcceptButton onClick={ handleEditPost }>Confirm</AcceptButton>
+        : <RegularButton onClick={ handleIsOpen }>Edit</RegularButton>
+      }
     </ButtonsContainer>
   )
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../constant/break-points';
 
 
 export const UsersPage = styled.section`
@@ -8,6 +9,8 @@ export const UsersPage = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  animation-delay: 1s;
   gap: 1rem;
   article {
     /* margin: 2rem; */
@@ -21,7 +24,6 @@ export const Card = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   &:hover {
     outline: 1px solid lightgrey;
   }
@@ -73,17 +75,27 @@ export const PostContainer = styled.div`
 `
 
 export const Post = styled.div`
-  width: 25rem;
+  /* width: 25rem; */
   min-height: 15rem;
   border-radius: .5rem;
   padding: 1rem;
   border-bottom: 1px solid lightgrey;
+
+  @media ${  devices.tablet } {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  /* &:hover div {
+    display: flex;
+  } */
+
 `
 
 export const PostBody = styled.p`
   font-size: 1.4rem;
   word-spacing: 1rem;
-  letter-spacing: 1px
+  letter-spacing: 1px;
 
 `
 
@@ -92,7 +104,9 @@ export const ButtonsContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
+  margin-top: 2rem;
+  /* display: none; */
+  transition: .1s ease;
   button {
     margin-left: 1rem;
     width: 5rem;
@@ -115,5 +129,13 @@ export const CommentBox = styled.div`
 export const Comment = styled.div` 
   width: 100%;
   border-bottom: 1px solid lightgrey;
-  padding-bottom: 2rem
+  padding-bottom: 2rem;
+`
+
+export const InputEdit = styled.textarea`
+  width: 100%;
+  height: 15rem;
+  padding: 1rem;
+  border: 1px solid lightblue;
+  resize: none;
 `
