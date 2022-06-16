@@ -4,8 +4,27 @@ const {
   add_post,
   edit_post,
   delete_post,
-  filter_comments, } = types;
+  filter_comments,
+  log_in,
+  log_out
+} = types;
 
+
+
+
+
+  export const loginUser = ( data ) => {
+    return {
+      type: log_in,
+      payload: data
+    }
+  }
+  export const logoutUser = ( data ) => {
+    return {
+      type: log_out,
+      payload: data
+    }
+  }
 
   export const addPost = ( data ) => {
     return {

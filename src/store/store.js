@@ -4,6 +4,7 @@ import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
 import { storeReducer } from "../reducers/storeReducer";
 import { filterReducer } from "../reducers/filterReducer";
+import { loginReducer } from "../reducers/loginReducer";
 
 
 const persistConfig = {
@@ -13,6 +14,7 @@ const persistConfig = {
 
 const reducers = combineReducers({ 
   storage_reducer: storeReducer,
+  login_reducer: loginReducer,
   // filter_reducer: filterReducer 
 })
 

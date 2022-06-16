@@ -5,7 +5,9 @@ export const useForm = ( initialState = { } ) => {
   const [inputValues, setInputValues] = useState({
     post: '',
     post_edit: '',
-    name_edit: ''
+    name_edit: '',
+    email: '',
+    password: ''
   })
   
   const handleInputChange = ( {target} ) => {
@@ -25,5 +27,5 @@ export const useForm = ( initialState = { } ) => {
   
   // 154
 
-  return {handleInputChange, inputValues}
+  return {handleInputChange, inputValues, setInputValues}
 }

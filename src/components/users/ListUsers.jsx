@@ -9,10 +9,11 @@ import { UserCard } from './UserCard'
 export const ListUsers = () => {
   const { fullData } = useSelector(state => state.storage_reducer)
   // debugger
-  const { fade_in } = animations
+  const { logged } = useSelector(state => state.login_reducer)
+  const { fade_in, fade_out } = animations
   // debugger
   return (
-    <UsersPage className={fade_in}>
+    <UsersPage className={ logged ? fade_in : fade_out }>
      {
        fullData !== undefined && fullData.length > 0 &&
        fullData.map(user => (

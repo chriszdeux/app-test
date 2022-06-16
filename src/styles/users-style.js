@@ -66,6 +66,12 @@ export const ModalContent = styled.div`
   align-items: center;
   background-color: white;
   overflow-y: scroll;
+  @media ${  devices.laptop } {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  
 `
 export const PostContainer = styled.div`
   /* width: 80%; */

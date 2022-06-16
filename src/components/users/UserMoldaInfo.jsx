@@ -1,4 +1,5 @@
 import React from 'react'
+import { animations } from '../../constant/animations'
 import { Paragrahp, SubTitle } from '../../styles/global-styles'
 import { Card, CardImage, Image, ModalContent } from '../../styles/users-style'
 import { UserPosts } from './UserPosts'
@@ -8,8 +9,9 @@ export const UserMoldaInfo = ({ user }) => {
 
   // useEffect(() )
   // debugger
+  const { fade_right } = animations
   return (
-    <ModalContent>
+    <ModalContent className={ fade_right } style={{ animationDelay: '1s' }}>
     <Card>
       <CardImage>
         <Image src={ avatar } alt={ first_name } />

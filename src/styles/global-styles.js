@@ -39,6 +39,12 @@ export const Button = styled.button`
   border: 1px solid gray;
   border-radius: .5rem;
   outline: none;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  &:active {
+    transform: scale(0.98);
+    opacity: .7;
+  }
 `
 
 export const DeleteButton = styled(Button)`
@@ -46,6 +52,7 @@ export const DeleteButton = styled(Button)`
 `
 export const RegularButton = styled(Button)`
   background-color: lightblue;
+  cursor: pointer;
 `
 export const AcceptButton = styled(Button)`
   background-color: #14e58e;
