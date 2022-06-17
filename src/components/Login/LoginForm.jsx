@@ -30,6 +30,8 @@ const { inputValues, handleInputChange, setInputValues } = useForm({
 })
 const navigate = useNavigate()
 const { email, password, errorLog, errorMessage } = inputValues
+
+
 const handleSubmit = (e) => {
   e.preventDefault()
   if(email.length > 0 && password.length > 0) {
@@ -73,7 +75,7 @@ useEffect(() => {
         <RegularButton onClick={ handleResetDefault }>Default User</RegularButton>
         { errorLogin &&  <SubTitle>access denied</SubTitle>}
 
-        <RegularButton onClick={ handleClearCache  }>Clear Cache</RegularButton>
+        {/* <RegularButton onClick={ handleClearCache  }>Clear Cache</RegularButton> */}
         
       </Form>
   )
