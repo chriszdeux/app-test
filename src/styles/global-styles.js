@@ -36,7 +36,7 @@ export const SmallText = styled.p`
 export const Button = styled.button`
   width: 25rem;
   height: 4rem;
-  border: 1px solid gray;
+  border: none;
   border-radius: .5rem;
   outline: none;
   transition: 0.2s ease-in;
@@ -46,15 +46,21 @@ export const Button = styled.button`
     transform: scale(0.98);
     opacity: .7;
   }
+  &:hover {
+    transform: scale(0.98);
+    opacity: .9;
+  }
 `
 
 export const DeleteButton = styled(Button)`
-  background-color: red;
+  background-color: #f27d7d;
 `
 export const RegularButton = styled(Button)`
-  background-color: lightblue;
+  background-color: #1ac5f4;
+  color: white;
   cursor: pointer;
 `
 export const AcceptButton = styled(Button)`
   background-color: #14e58e;
 `
+

@@ -5,6 +5,7 @@ import { mergeData, storePosts, storeUsers } from '../../actions/storeDataAction
 import { animations } from '../../constant/animations'
 import { data_posts } from '../../constant/data-posts'
 import { data_users } from '../../constant/data-users'
+import { HeaderBar } from '../header'
 import { ListUsers } from './ListUsers'
 export const UsersScreen = () => {
   const { logged } = useSelector(state => state.login_reducer)
@@ -23,6 +24,9 @@ export const UsersScreen = () => {
   }, [])
   const { fade_in, fade_out } = animations
   return (
-   <ListUsers /> 
+    <>
+    <HeaderBar /> 
+    <ListUsers /> 
+    </>
   )
 }

@@ -1,6 +1,6 @@
 import { types } from "../types/types"
 
-const {  storage_users, storage_posts, storage_comments, merge_storage } = types
+const {  clear_storage, storage_users, storage_posts, storage_comments, merge_storage } = types
 
 export const storeUsers = ( data ) => {
   return {
@@ -26,6 +26,13 @@ export const storeComments = ( data ) => {
 export const mergeData = (  ) => {
   return {
     type: merge_storage,
+    payload: false
+  }
+}
+
+export const clearStorage = (  ) => {
+  return {
+    type: clear_storage,
     payload: false
   }
 }

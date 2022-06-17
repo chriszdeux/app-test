@@ -19,8 +19,7 @@ export const MainRouter = () => {
   const { fade_in } = animations
   return (
     <Router>
-      { logged && <HeaderBar /> }
-      
+
       <Routes>
         <Route path='/' element={ <LoginScreen /> } />
         <Route path='/app-test/' element={ <LoginScreen /> } />

@@ -2,12 +2,13 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { clearStorage } from '../../actions/storeDataAction'
 import { loginUser } from '../../actions/userActions'
 import { login } from '../../data/login'
 import { useLogin } from '../../hooks/dataFetch/useLogin'
 import { useForm } from '../../hooks/useForm'
 import { loginReducer } from '../../reducers/loginReducer'
-import { Button, SubTitle, Text, Title} from '../../styles/global-styles'
+import { Button, RegularButton, SubTitle, Text, Title} from '../../styles/global-styles'
 import { Form, Input, Label } from '../../styles/login-style'
 
 export const LoginForm = () => {
@@ -55,27 +56,25 @@ const handleResetDefault = (e) => {
   
 }
 
-
+const handleClearCache = () => {
+  dispatch(clearStorage())
+}
 
 useEffect(() => {
   logged && navigate('/app-test/users')
 }, [ ])
   return (
-    <>
-    {
-      logged 
-      ?<Title>Loading data..., Welcome n.n</Title>
-      :<Form>
+    <Form>
         <Input type='email' name='email' value={ email } onChange={ handleInputChange } placeholder='Email'/>
         <Input type='password' name='password' value={ password } onChange={ handleInputChange }  placeholder='Password'/>
         { errorLog && <Label>Email / Password incorrect</Label> }
-        <Button onClick={ handleSubmit }>Sign In</Button>
+        <RegularButton onClick={ handleSubmit }>Sign In</RegularButton>
 
-        <Button onClick={ handleResetDefault }>Default User</Button>
+        <RegularButton onClick={ handleResetDefault }>Default User</RegularButton>
         { errorLogin &&  <SubTitle>access denied</SubTitle>}
+
+        <RegularButton onClick={ handleClearCache  }>Clear Cache</RegularButton>
         
       </Form>
-    }
-    </>
   )
 }

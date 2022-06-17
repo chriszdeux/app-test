@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { filterPosts } from '../../actions/userActions'
 import { animations } from '../../constant/animations'
 import { Paragrahp, SubTitle } from '../../styles/global-styles'
+import { BoxDetail, BoxDetailTop } from '../../styles/login-style'
 import { Card, CardImage, Image, ModalContent } from '../../styles/users-style'
 import { UserPosts } from './UserPosts'
 
@@ -26,6 +27,8 @@ export const UserMoldaInfo = ({ user }) => {
       <Paragrahp>{ email }</Paragrahp>
     </Card>
     <UserPosts />
+    <BoxDetail></BoxDetail>
+    <BoxDetailTop></BoxDetailTop>
     </ModalContent>
   )
 }

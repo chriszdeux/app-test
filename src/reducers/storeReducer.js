@@ -1,6 +1,6 @@
 import { types } from "../types/types";
 
-const {  storage_users, storage_posts, storage_comments, merge_storage, filter_posts, edit_post, delete_post } = types
+const {  storage_users, clear_storage,  storage_posts, storage_comments, merge_storage, filter_posts, edit_post, delete_post } = types
 const initialState = {
   users: [],
   posts: [],
@@ -23,6 +23,7 @@ export const storeReducer = ( state = initialState, action ) => {
       
       case filter_posts:
         // debugger
+        
         return {
           ...state,
           filterPostById: state.posts.filter(post => post.userId === action.payload)
@@ -75,6 +76,9 @@ export const storeReducer = ( state = initialState, action ) => {
           ...state,
           posts: state.posts.filter(item => item.id !== action.payload)
         }
+
+      case clear_storage:
+        return []
     default:
       return state
   }

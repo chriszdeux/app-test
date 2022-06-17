@@ -10,11 +10,13 @@ export const UserPosts = () => {
   const { filterPostById, posts } = useSelector(state => state.storage_reducer)
   const { fade_top } = animations
   const dispatch = useDispatch()
-  
+  // debugger
   return (
     <PostContainer className={ fade_top } style={{ animationDelay: '2s' }}>
       {
-        filterPostById.map(post => (
+        filterPostById.length === 0
+        ? <Title>No post</Title>
+        : filterPostById.map(post => (
             <UserPost post={ post } key={ post.id }/>
           ))
       }

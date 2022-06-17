@@ -53,10 +53,10 @@ export const AnimationContainer = styled.div`
 export const BoxDetail = styled.div`
   width: 50rem;
   height: 50rem;
-  position: absolute;
+  position: fixed;
   right: -30rem;
   bottom: -25rem;
-  background-color: blue;
+  background-color: #2f6bb5;
   opacity: .2;
   transform: rotate(45deg);
   animation-delay: 1s;
@@ -72,10 +72,10 @@ export const BoxDetail = styled.div`
 export const BoxDetailTop = styled.div`
   width: 50rem;
   height: 50rem;
-  position: absolute;
+  position: fixed;
   left: -30rem;
   top: -25rem;
-  background-color: blue;
+  background-color: #2f6bb5;
   opacity: .2;
   transform: rotate(45deg);
   /* animation-delay: 1s; */

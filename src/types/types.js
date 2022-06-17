@@ -2,7 +2,7 @@ export const types = {
   storage_users: '[Storage] Users',
   storage_posts: '[Storage] Posts',
   storage_comments: '[Storage] Comments',
-  
+  clear_storage: '[Storage] Clean',
   log_in: '[Log] In',
   log_out: '[Log] Out',
   merge_storage: '[Merge] Data',

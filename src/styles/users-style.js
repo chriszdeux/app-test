@@ -15,6 +15,10 @@ export const UsersPage = styled.section`
   article {
     /* margin: 2rem; */
   }
+  @media ${devices.laptop} {
+    width: 80%;
+    margin: 0 auto;
+  }
 `
 
 export const Card = styled.article`
@@ -32,6 +36,10 @@ export const Card = styled.article`
   &:hover .main--image{
     transform: scale(1.1);
     box-shadow: 0 0 1rem .3rem #8e8e8e;
+  }
+
+  @media ${devices.laptop} {
+    width: 25rem;
   }
 `
 
@@ -84,10 +92,11 @@ export const Modal = styled.div`
 export const ModalLayout = styled(Modal)`
   position: absolute;
   background-color: #424242;
-  opacity: .7;
+  filter: blur(.3rem) opacity(.8);
   z-index: -1;
 `
 export const ModalContent = styled.div`
+  position: relative;
   width: 90%;
   height: 90vh;
   margin: 0 auto;
@@ -96,6 +105,7 @@ export const ModalContent = styled.div`
   align-items: center;
   background-color: white;
   overflow-y: scroll;
+  overflow-x: hidden;
   @media ${  devices.laptop } {
     width: 50%;
     margin: 0 auto;
