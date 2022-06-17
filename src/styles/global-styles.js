@@ -40,6 +40,7 @@ export const Button = styled.button`
   border-radius: .5rem;
   outline: none;
   transition: 0.2s ease-in;
+  margin: 1rem;
   cursor: pointer;
   &:active {
     transform: scale(0.98);

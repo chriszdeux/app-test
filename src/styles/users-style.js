@@ -24,21 +24,50 @@ export const Card = styled.article`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &:hover {
-    outline: 1px solid lightgrey;
+  transition: .2s ease;
+  &:hover .blur--image{
+    transform: scale(1.1) translateY(-2rem);
+    filter: opacity(.5) blur(.3rem);
+  }
+  &:hover .main--image{
+    transform: scale(1.1);
+    box-shadow: 0 0 1rem .3rem #8e8e8e;
   }
 `
 
 export const CardImage = styled.figure`
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  `
+
+export const Image = styled.img`
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
-  overflow: hidden;
-`
-
-export const Image = styled.img`
+  object-fit: cover;
+  transition: .2s ease;
+  `
+export const BlurImage = styled.img`
   width: 100%;
   object-fit: cover;
+  width: 20rem;
+  height: 20rem;
+  position: absolute;
+  top: 8rem;
+  z-index: -1;
+  border-radius: 50%;
+  transition: .2s ease;
+  filter: blur(.3rem) opacity(.2);
+  /* &:hover {
+    transform: scale(2)
+  } */
 `
 export const Modal = styled.div`
   width: 100%;
@@ -49,6 +78,7 @@ export const Modal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `
 
 export const ModalLayout = styled(Modal)`

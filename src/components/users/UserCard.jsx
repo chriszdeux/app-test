@@ -2,7 +2,7 @@ import React from 'react'
 import { animations } from '../../constant/animations'
 import { useOpenComponent } from '../../hooks/useOpenComponent'
 import { Paragrahp, SubTitle } from '../../styles/global-styles'
-import { Card, CardImage, Image } from '../../styles/users-style'
+import { BlurImage, Card, CardImage, Image } from '../../styles/users-style'
 import { UserModal } from './UserModal'
 
 export const UserCard = ({ user }) => {
@@ -13,7 +13,8 @@ export const UserCard = ({ user }) => {
       <>
         <Card onClick={ handleIsOpen } >
           <CardImage>
-            <Image src={ avatar } alt={ first_name } />
+            <Image src={ avatar } alt={ first_name } className='main--image'/>
+            <BlurImage  src={ avatar } alt={ first_name } className='blur--image'/>
           </CardImage>
           <SubTitle>{ first_name } { last_name }</SubTitle>
           <Paragrahp>{ email }</Paragrahp>

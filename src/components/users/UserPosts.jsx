@@ -7,8 +7,10 @@ import { PostContainer } from '../../styles/users-style'
 import { UserPost } from './UserPost'
 
 export const UserPosts = () => {
-  const { filterPostById } = useSelector(state => state.storage_reducer)
+  const { filterPostById, posts } = useSelector(state => state.storage_reducer)
   const { fade_top } = animations
+  const dispatch = useDispatch()
+  
   return (
     <PostContainer className={ fade_top } style={{ animationDelay: '2s' }}>
       {

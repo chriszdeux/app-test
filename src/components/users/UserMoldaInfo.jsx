@@ -8,11 +8,11 @@ import { UserPosts } from './UserPosts'
 
 export const UserMoldaInfo = ({ user }) => {
   const { avatar, first_name, last_name, email, id} = user
-
+  const { posts } = useSelector(state => state.storage_reducer)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(filterPosts(id))
-  }, [ id ])
+  }, [ id, posts.length ])
   // useEffect(() )
   // debugger
   const { fade_right } = animations
