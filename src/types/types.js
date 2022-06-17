@@ -10,6 +10,6 @@ export const types = {
   add_post: '[Add] Post',
   edit_post: '[Edit] Post',
   delete_post: '[Delete] Post',
-  filter_comments: '[Filter] Post'
+  filter_posts: '[Filter] Post'
   
 }

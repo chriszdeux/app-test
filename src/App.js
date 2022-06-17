@@ -10,29 +10,29 @@ import 'animate.css';
 
 
   function App() {
-  const dispatch = useDispatch();
-  const Users = useGetUsers();
-  const Posts = useGetPosts();
-  const Comments = useGetComments();
-  const UsersData = useSelector(state => state.storage_reducer)
-    // debugger
-useEffect(() => {
-    UsersData.users.length === 0 && dispatch(storeUsers(Users.users))
-  }, [ Users.users.length ])
+//   const dispatch = useDispatch();
+//   const Users = useGetUsers();
+//   const Posts = useGetPosts();
+//   const Comments = useGetComments();
+//   const UsersData = useSelector(state => state.storage_reducer)
+//     // debugger
+// useEffect(() => {
+//     UsersData.users.length === 0 && dispatch(storeUsers(Users.users))
+//   }, [ Users.users.length ])
 
-useEffect(() => {
-    UsersData.posts.length === 0 && dispatch(storePosts(Posts.posts))
-  }, [ Posts.posts.length, Posts.posts ])
+// useEffect(() => {
+//     UsersData.posts.length === 0 && dispatch(storePosts(Posts.posts))
+//   }, [ Posts.posts.length, Posts.posts ])
   
-useEffect(() => {
-    UsersData.comments.length === 0 && dispatch(storeComments(Comments.comments))
-  }, [ Comments.comments.length ])
-  // debugger
-useEffect(() => {
-  if( UsersData.posts.length > 0 ) {
-    dispatch(mergeData())
-  }
-}, [ Posts.posts ])
+// useEffect(() => {
+//     UsersData.comments.length === 0 && dispatch(storeComments(Comments.comments))
+//   }, [ Comments.comments.length ])
+//   // debugger
+// useEffect(() => {
+//   if( UsersData.posts.length > 0 ) {
+//     dispatch(mergeData())
+//   }
+// }, [ Posts.posts ])
   return (
     <div className="App">
       <MainRouter />

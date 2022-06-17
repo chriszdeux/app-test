@@ -6,12 +6,13 @@ import { Title } from '../../styles/global-styles'
 import { PostContainer } from '../../styles/users-style'
 import { UserPost } from './UserPost'
 
-export const UserPosts = ({ posts }) => {
+export const UserPosts = () => {
+  const { filterPostById } = useSelector(state => state.storage_reducer)
   const { fade_top } = animations
   return (
     <PostContainer className={ fade_top } style={{ animationDelay: '2s' }}>
       {
-        posts.map(post => (
+        filterPostById.map(post => (
             <UserPost post={ post } key={ post.id }/>
           ))
       }

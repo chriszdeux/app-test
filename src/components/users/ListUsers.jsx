@@ -7,7 +7,7 @@ import { UsersPage } from '../../styles/users-style'
 import { UserCard } from './UserCard'
 
 export const ListUsers = () => {
-  const { fullData } = useSelector(state => state.storage_reducer)
+  const { users } = useSelector(state => state.storage_reducer)
   // debugger
   const { logged } = useSelector(state => state.login_reducer)
   const { fade_in, fade_out } = animations
@@ -15,8 +15,8 @@ export const ListUsers = () => {
   return (
     <UsersPage className={ logged ? fade_in : fade_out }>
      {
-       fullData !== undefined && fullData.length > 0 &&
-       fullData.map(user => (
+       users.length > 0 &&
+       users.map(user => (
          <UserCard user={ user } key={ user.id }/>
          ))
       } 

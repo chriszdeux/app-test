@@ -1,12 +1,12 @@
 import { types } from "../types/types";
 
-const {  storage_users, storage_posts, storage_comments, merge_storage, filter_comments, edit_post, delete_post } = types
+const {  storage_users, storage_posts, storage_comments, merge_storage, filter_posts, edit_post, delete_post } = types
 const initialState = {
   users: [],
   posts: [],
   comments: [],
   fullData: [],
-  filterComments: []
+  filterPostById: []
 }
 export const storeReducer = ( state = initialState, action ) => {
   switch (action.type) {
@@ -20,7 +20,13 @@ export const storeReducer = ( state = initialState, action ) => {
         ...state,
         posts: [...action.payload]
       }
-  
+      
+      case filter_posts:
+        // debugger
+        return {
+          ...state,
+          filterPostById: state.posts.filter(post => post.userId === action.payload)
+        }
     case storage_comments:
       return {
         ...state,

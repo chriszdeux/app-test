@@ -4,7 +4,7 @@ const {
   add_post,
   edit_post,
   delete_post,
-  filter_comments,
+  filter_posts,
   log_in,
   log_out
 } = types;
@@ -50,7 +50,7 @@ const {
 
   export const filterPosts = ( id ) => {
     return {
-      type: filter_comments,
+      type: filter_posts,
       payload: id
     }
   }
